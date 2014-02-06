@@ -2,41 +2,38 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <meta name="description" content="Boundarized : Working with layout boundarizing." />
+    <meta name="description" content="Boundarized : Working w/o layout boundarizing." />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <title>Boundarized</title>
+    <title>Boundarized : w/o boundaries</title>
     <style type="text/css">
-    .l, .r{
+    .l{
       width:222px;
       height: 222px;
-      background-color: silver
-    }
-    .r{
-      position: absolute;
-      left: 232px;
-      top:8px;
+      border: 1px solid #999;
     }
     </style>
   </head>
   <body>
-  <div id="l" class="l">l</div>
-  <div id="r" class="r">r</div>
-  <button id="atl">append to l</button> | 
-  <button id="atr">append to r</button> | 
-  <a href="https://github.com/getsetbro/Boundarized">github</a>
+
+    <h1>Boundarized : w/o boundaries</h1>
+
+    <button id="atl">append to left</button> | 
+    <a href="https://github.com/getsetbro/Boundarized">github</a>
+    
+    <div id="l" class="l">left<br/></div>
+
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript">
-  String.prototype.repeat = function( num )
-{
+  String.prototype.repeat = function( num ){
     return new Array( num + 1 ).join( this );
-};
+  };
+
   var li = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies felis eget arcu posuere, ut facilisis magna bibendum. Morbi porta sodales dictum. Phasellus metus nisl, pellentesque in erat vel, ultricies lacinia arcu. Nunc lobortis et mi id gravida. Duis est dolor, facilisis nec commodo eget, cursus id velit. Sed eleifend est lacinia ligula pharetra, vulputate commodo tortor faucibus. Nullam ullamcorper semper sapien, ut tempor nibh fermentum nec. Curabitur a semper lectus, eget luctus est. Quisque iaculis tincidunt mi id facilisis. Nulla pellentesque pellentesque lectus eget aliquet. Curabitur tellus nulla, vulputate id tempor eget, dictum malesuada libero. Curabitur semper sem eget nisl pharetra euismod. Nulla dignissim sed mauris ac faucibus. Aliquam mollis ipsum ante, molestie blandit ligula condimentum a. Vivamus accumsan iaculis metus eget feugiat. Morbi aliquam ornare nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus nec risus sapien. Aliquam pretium, purus in eleifend viverra, quam velit lacinia felis, vel tempor lectus ligula non justo. Proin tempus consectetur egestas. Phasellus vel iaculis odio. Vivamus tincidunt, ligula eget dignissim ultrices, ligula elit mollis nisl, ut pellentesque eros magna eu dolor. Vivamus tempus neque sapien, at semper tellus molestie nec. Aliquam fringilla purus convallis sapien varius interdum. Donec porttitor ante quis nunc porta, sit amet bibendum libero viverra. Sed et purus venenatis, volutpat tellus sit amet, sollicitudin tortor. Praesent pellentesque tellus ut dolor scelerisque aliquet. Duis elementum nec turpis ut tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nisl nisi, pretium sit amet dui ut, lobortis elementum elit. Nulla facilisi. Donec posuere est eget posuere eleifend. Nam pharetra est non sollicitudin pellentesque. Mauris lectus tellus, pulvinar non suscipit porttitor, suscipit sit amet leo. Nullam leo est, tincidunt at dapibus feugiat, vulputate at elit. Donec non condimentum odio, non pharetra quam. Pellentesque et lectus diam. Etiam consequat vulputate elementum. Proin purus metus, varius nec accumsan quis, lacinia nec orci. In sit amet metus et enim fermentum tincidunt vitae id felis. Mauris aliquam aliquam neque. Aliquam at ullamcorper nisi. Aenean ac adipiscing nunc. Curabitur at tortor elementum, convallis eros quis, eleifend urna. Nam sed felis nec risus iaculis luctus. Integer at hendrerit turpis, vel rutrum enim. Phasellus tincidunt purus vitae nisl accumsan, a eleifend metus eleifend. Maecenas ullamcorper suscipit nibh, sed bibendum elit fringilla ac. Sed cursus, tellus sit amet mollis pharetra, neque metus vehicula arcu, ac rhoncus nisi ligula vitae odio. Aenean elit nibh, luctus ut nibh nec, pharetra vehicula urna. Maecenas et dignissim mauris. Donec tempus dolor eu purus gravida tristique. Praesent pellentesque enim sit amet enim sodales, ut pretium ipsum commodo. Duis tincidunt nibh condimentum ipsum rhoncus congue. In pellentesque nisl sagittis leo rhoncus egestas. Morbi pellentesque ornare orci ac luctus. Aliquam ultricies at risus eu imperdiet. Nunc a mattis risus.";
+
   $('#atl').click(function(){
     $('#l').append(li.repeat(99));  
   });
-  $('#atr').click(function(){
-    $('#r').append(li.repeat(99));
-  });
+
   </script>
   </body>
 </html>
