@@ -2,36 +2,90 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <meta name="description" content="Boundarized : Working w/o layout boundarizing." />
+    <meta name="description" content="Boundarized : Working with layout boundarizing." />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <title>Boundarized : w/o boundaries</title>
+    <title>Boundarized w/o</title>
     <style type="text/css">
+    html,body{
+      height: 100%;
+    }
+    body{
+      margin: 0;
+      font-family: sans-serif;
+    }
+    body *{
+      box-sizing:border-box;
+    }
+    header, footer{
+      padding-top: 5px;
+      background-color: #333;
+      background-image: linear-gradient(to bottom, #373737, #212121);
+      height: 33px;
+      text-align: center;
+      color: #bbb;
+    }
+    a{
+      color: #bbb
+    }
     .l{
       width:222px;
-      height: 222px;
-      border: 1px solid #999;
+      overflow: auto;
+      float:left;
+      background-color: gainsboro
     }
+    h4{
+      margin: 5px 0;
+      text-align: center;
+    }
+    ul{
+      list-style: none outside none;
+      margin: 0;
+      padding: 0 5px;
+    }
+    li{
+      display: block;
+      padding: 4px;
+      margin-bottom: 2px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      background-color: #bbb;
+    }
+    .r{
+      width:calc(100% - 225px);
+      background-color: silver;
+      float: right;
+      overflow: auto;
+
+    }
+    footer{clear:both;}
     </style>
   </head>
   <body>
-
-    <h1>Boundarized : w/o boundaries</h1>
-
-    <button id="atl">append to left</button> | 
-    <a href="https://github.com/getsetbro/Boundarized">github</a>
-    
-    <div id="l" class="l">left<br/></div>
-
+    <header>
+        <b>Boundarized</b> | <a href="https://github.com/getsetbro/Boundarized">github</a> | 
+        <button id="atl">append to left</button>
+        <button id="atr">append to right</button>
+    </header>
+    <div id="r" class="r">
+      <h4>right</h4>
+    </div>
+    <div id="l" class="l">
+      <h4>left</h4>
+    </div>
+    <footer>&copy;</footer>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript">
   String.prototype.repeat = function( num ){
-    return new Array( num + 1 ).join( this );
+    return new Array( num + 1 ).join('<li>'+this+'</li>');
   };
 
-  var li = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies felis eget arcu posuere, ut facilisis magna bibendum. Morbi porta sodales dictum. Phasellus metus nisl, pellentesque in erat vel, ultricies lacinia arcu. Nunc lobortis et mi id gravida. Duis est dolor, facilisis nec commodo eget, cursus id velit. Sed eleifend est lacinia ligula pharetra, vulputate commodo tortor faucibus. Nullam ullamcorper semper sapien, ut tempor nibh fermentum nec. Curabitur a semper lectus, eget luctus est. Quisque iaculis tincidunt mi id facilisis. Nulla pellentesque pellentesque lectus eget aliquet. Curabitur tellus nulla, vulputate id tempor eget, dictum malesuada libero. Curabitur semper sem eget nisl pharetra euismod. Nulla dignissim sed mauris ac faucibus. Aliquam mollis ipsum ante, molestie blandit ligula condimentum a. Vivamus accumsan iaculis metus eget feugiat. Morbi aliquam ornare nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus nec risus sapien. Aliquam pretium, purus in eleifend viverra, quam velit lacinia felis, vel tempor lectus ligula non justo. Proin tempus consectetur egestas. Phasellus vel iaculis odio. Vivamus tincidunt, ligula eget dignissim ultrices, ligula elit mollis nisl, ut pellentesque eros magna eu dolor. Vivamus tempus neque sapien, at semper tellus molestie nec. Aliquam fringilla purus convallis sapien varius interdum. Donec porttitor ante quis nunc porta, sit amet bibendum libero viverra. Sed et purus venenatis, volutpat tellus sit amet, sollicitudin tortor. Praesent pellentesque tellus ut dolor scelerisque aliquet. Duis elementum nec turpis ut tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nisl nisi, pretium sit amet dui ut, lobortis elementum elit. Nulla facilisi. Donec posuere est eget posuere eleifend. Nam pharetra est non sollicitudin pellentesque. Mauris lectus tellus, pulvinar non suscipit porttitor, suscipit sit amet leo. Nullam leo est, tincidunt at dapibus feugiat, vulputate at elit. Donec non condimentum odio, non pharetra quam. Pellentesque et lectus diam. Etiam consequat vulputate elementum. Proin purus metus, varius nec accumsan quis, lacinia nec orci. In sit amet metus et enim fermentum tincidunt vitae id felis. Mauris aliquam aliquam neque. Aliquam at ullamcorper nisi. Aenean ac adipiscing nunc. Curabitur at tortor elementum, convallis eros quis, eleifend urna. Nam sed felis nec risus iaculis luctus. Integer at hendrerit turpis, vel rutrum enim. Phasellus tincidunt purus vitae nisl accumsan, a eleifend metus eleifend. Maecenas ullamcorper suscipit nibh, sed bibendum elit fringilla ac. Sed cursus, tellus sit amet mollis pharetra, neque metus vehicula arcu, ac rhoncus nisi ligula vitae odio. Aenean elit nibh, luctus ut nibh nec, pharetra vehicula urna. Maecenas et dignissim mauris. Donec tempus dolor eu purus gravida tristique. Praesent pellentesque enim sit amet enim sodales, ut pretium ipsum commodo. Duis tincidunt nibh condimentum ipsum rhoncus congue. In pellentesque nisl sagittis leo rhoncus egestas. Morbi pellentesque ornare orci ac luctus. Aliquam ultricies at risus eu imperdiet. Nunc a mattis risus.";
+  var li = "item";
 
   $('#atl').click(function(){
-    $('#l').append(li.repeat(99));  
+    $('#l').append('<ul>'+li.repeat(999)+'</ul>');  
+  });
+  $('#atr').click(function(){
+    $('#r').append('<ul>'+li.repeat(999)+'</ul>');  
   });
 
   </script>
